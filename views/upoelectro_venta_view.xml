@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="upoelectro_venta_form">
+			<field name="name">upoelectro_venta_form</field>
+			<field name="model">upoelectro.upoelectro_venta</field>
+			<field name="arch" type="xml">
+				<form string="Ventas">
+					<group string="Ventas">
+						<field name="fecha" />
+						<field name="importe" />
+						<field name="direccion" />
+						<field name="cliente" widget="many2one" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upoelectro_venta_tree_view">
+			<field name="name">upoelectro_venta_tree</field>
+			<field name="model">upoelectro.upoelectro_venta</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="fecha" />
+					<field name="importe" />
+					<field name="direccion" />
+					<field name="cliente" widget="many2one" />
+				</tree>
+			</field>
+		</record>
+
+
+		<record id="act_upoelectro_venta"
+			model="ir.actions.act_window">
+			<field name="name">Ventas</field>
+			<field name="res_model">upoelectro.upoelectro_venta</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem name="Ventas" id="upoelectro_venta_submenu"
+			parent="upoelectro" sequence="100" />
+		<menuitem name="Ver ventas" id="ver_ventas_submenu"
+			parent="upoelectro_venta_submenu" sequence="110"
+			action="act_upoelectro_venta" />
+	</data>
+</odoo> 
