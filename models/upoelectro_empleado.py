@@ -9,5 +9,5 @@ class upoelectro_empleado(models.Model):
     correo = fields.Char('Correo', size=20)
     direccion = fields.Char('Dirección', size=20)
     foto = fields.Binary('Foto de perfil')
-    
-    ventas_ids = fields.One2many('upoelectro.upoelectro_venta','empleado_id', 'Ventas') 
+    ventas_ids = fields.One2many('upoelectro.upoelectro_venta','empleado_id', 'Ventas')
+    compras_ids = fields.One2many('upoelectro.upoelectro_compra','empleado_id', 'Compras')

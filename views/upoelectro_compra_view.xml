@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="upoelectro_compra_form">
+			<field name="name">upoelectro_compra_form</field>
+			<field name="model">upoelectro.upoelectro_compra</field>
+			<field name="arch" type="xml">
+				<form string="Compras">
+					<group string="Compras">
+						<field name="fecha" />
+						<field name="importe" />
+						<field name="direccion" />
+						<field name="proveedor_id"/>
+						<field name="empleado_id" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upoelectro_compra_tree_view">
+			<field name="name">upoelectro_compra_tree</field>
+			<field name="model">upoelectro.upoelectro_compra</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="fecha" />
+					<field name="importe" />
+					<field name="direccion" />
+					<field name="proveedor_id"/>
+					<field name="empleado_id" />
+				</tree>
+			</field>
+		</record>
+
+
+		<record id="act_upoelectro_compra"
+			model="ir.actions.act_window">
+			<field name="name">Compras</field>
+			<field name="res_model">upoelectro.upoelectro_compra</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem name="Compras" id="upoelectro_compra_submenu"
+			parent="upoelectro" sequence="400" />
+		<menuitem name="Ver compras" id="ver_compras_submenu"
+			parent="upoelectro_compra_submenu" sequence="410"
+			action="act_upoelectro_compra" />
+	</data>
+</odoo> 

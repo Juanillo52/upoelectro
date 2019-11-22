@@ -43,8 +43,8 @@
 		</record>
 		<menuitem id="upoelectro" name="UPOElectro" action="act_upoelectro_cliente" />
 		<menuitem name="Clientes" id="upoelectro_cliente_submenu" parent="upoelectro"
-			sequence="100" />
+			sequence="200" />
 		<menuitem name="Ver clientes" id="ver_clientes_submenu"
-			parent="upoelectro_cliente_submenu" sequence="110" action="act_upoelectro_cliente" />
+			parent="upoelectro_cliente_submenu" sequence="210" action="act_upoelectro_cliente" />
 	</data>
 </odoo> 

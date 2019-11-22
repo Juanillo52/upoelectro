@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="upoelectro_proveedor_form">
+			<field name="name">upoelectro_proveedor_form</field>
+			<field name="model">upoelectro.upoelectro_proveedor</field>
+			<field name="arch" type="xml">
+				<form string="Proveedores">
+					<group string="Proveedores">
+						<field name="identificador" />
+						<field name="name" />
+						<field name="telefono" />
+						<field name="correo" />
+						<field name="direccion" />
+						<field name="foto" widget="image"/>
+						<field name="compras_ids"/>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upoelectro_proveedor_tree_view">
+			<field name="name">upoelectro_proveedor_tree</field>
+			<field name="model">upoelectro.upoelectro_proveedor</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="identificador" />
+					<field name="name" />
+					<field name="telefono" />
+					<field name="correo" />
+					<field name="direccion" />
+					<field name="foto" widget="image"/>
+					<field name="compras_ids"/>
+				</tree>
+			</field>
+		</record>
+
+
+		<record id="act_upoelectro_proveedor" model="ir.actions.act_window">
+			<field name="name">Proveedores</field>
+			<field name="res_model">upoelectro.upoelectro_proveedor</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem id="upoelectro" name="UPOElectro" action="act_upoelectro_proveedor" />
+		<menuitem name="Proveedores" id="upoelectro_proveedor_submenu" parent="upoelectro"
+			sequence="350" />
+		<menuitem name="Ver proveedores" id="ver_proveedores_submenu"
+			parent="upoelectro_proveedor_submenu" sequence="360" action="act_upoelectro_proveedor" />
+	</data>
+</odoo> 
