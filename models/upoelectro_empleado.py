@@ -11,3 +11,4 @@ class upoelectro_empleado(models.Model):
     foto = fields.Binary('Foto de perfil')
     ventas_ids = fields.One2many('upoelectro.upoelectro_venta','empleado_id', 'Ventas')
     compras_ids = fields.One2many('upoelectro.upoelectro_compra','empleado_id', 'Compras')
+    almacenes_ids = fields.Many2many('upoelectro.upoelectro_almacen', string='Almacenes')

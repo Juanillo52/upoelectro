@@ -15,6 +15,7 @@
 						<field name="foto" widget="image"/>
 						<field name="ventas_ids"/>
 						<field name="compras_ids"/>
+						<field name="almacenes_ids" />
 					</group>
 				</form>
 			</field>
@@ -33,6 +34,7 @@
 					<field name="foto" widget="image"/>
 					<field name="ventas_ids"/>
 					<field name="compras_ids"/>
+					<field name="almacenes_ids" />
 				</tree>
 			</field>
 		</record>

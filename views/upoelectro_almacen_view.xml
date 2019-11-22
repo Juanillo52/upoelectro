@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="upoelectro_almacen_form">
+			<field name="name">upoelectro_almacen_form</field>
+			<field name="model">upoelectro.upoelectro_almacen</field>
+			<field name="arch" type="xml">
+				<form string="Almacenes">
+					<group string="Almacenes">
+						<field name="identificador" />
+						<field name="localizacion" />
+						<field name="foto" widget="image" />
+						<field name="empleados_ids" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upoelectro_almacen_tree_view">
+			<field name="name">upoelectro_almacen_tree</field>
+			<field name="model">upoelectro.upoelectro_almacen</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="identificador" />
+					<field name="localizacion" />
+					<field name="foto" widget="image" />
+					<field name="empleados_ids" />
+				</tree>
+			</field>
+		</record>
+
+
+		<record id="act_upoelectro_almacen"
+			model="ir.actions.act_window">
+			<field name="name">Almacenes</field>
+			<field name="res_model">upoelectro.upoelectro_almacen</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem id="upoelectro" name="UPOElectro"
+			action="act_upoelectro_almacen" />
+		<menuitem name="Almacenes" id="upoelectro_almacen_submenu"
+			parent="upoelectro" sequence="450" />
+		<menuitem name="Ver almacenes" id="ver_almacenes_submenu"
+			parent="upoelectro_almacen_submenu" sequence="460"
+			action="act_upoelectro_almacen" />
+	</data>
+</odoo> 
