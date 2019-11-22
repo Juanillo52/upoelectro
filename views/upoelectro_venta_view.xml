@@ -10,7 +10,8 @@
 						<field name="fecha" />
 						<field name="importe" />
 						<field name="direccion" />
-						<field name="cliente" widget="many2one" />
+						<field name="cliente_id"/>
+						<field name="empleado_id" />
 					</group>
 				</form>
 			</field>
@@ -24,7 +25,8 @@
 					<field name="fecha" />
 					<field name="importe" />
 					<field name="direccion" />
-					<field name="cliente" widget="many2one" />
+					<field name="cliente_id"/>
+					<field name="empleado_id" />
 				</tree>
 			</field>
 		</record>

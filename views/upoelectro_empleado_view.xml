@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="upoelectro_empleado_form">
+			<field name="name">upoelectro_empleado_form</field>
+			<field name="model">upoelectro.upoelectro_empleado</field>
+			<field name="arch" type="xml">
+				<form string="Empleados">
+					<group string="Empleados">
+						<field name="name" />
+						<field name="usuario"/>
+						<field name="telefono" />
+						<field name="correo" />
+						<field name="direccion" />
+						<field name="foto" widget="image"/>
+						<field name="ventas_ids"/>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upoelectro_empleado_tree_view">
+			<field name="name">upoelectro_empleado_tree</field>
+			<field name="model">upoelectro.upoelectro_empleado</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="name" />
+					<field name="usuario"/>
+					<field name="telefono" />
+					<field name="correo" />
+					<field name="direccion" />
+					<field name="foto" widget="image"/>
+					<field name="ventas_ids"/>
+				</tree>
+			</field>
+		</record>
+
+
+		<record id="act_upoelectro_empleado" model="ir.actions.act_window">
+			<field name="name">Empleados</field>
+			<field name="res_model">upoelectro.upoelectro_empleado</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem name="Empleados" id="upoelectro_empleado_submenu" parent="upoelectro"
+			sequence="100" />
+		<menuitem name="Ver clientes" id="ver_empleados_submenu"
+			parent="upoelectro_empleado_submenu" sequence="110" action="act_upoelectro_empleado" />
+	</data>
+</odoo> 

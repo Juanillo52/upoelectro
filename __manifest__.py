@@ -7,7 +7,7 @@
     'category': 'UPOElectro',
     'version': '0.1',
     'depends': ['base'],
-    'data': ['views/upoelectro_cliente_view.xml'],
+    'data': ['views/upoelectro_cliente_view.xml', 'views/upoelectro_venta_view.xml', 'views/upoelectro_empleado_view.xml'],
     'demo': [ ],
     'application': True,
 }

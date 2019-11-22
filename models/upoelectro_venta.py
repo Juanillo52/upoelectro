@@ -6,4 +6,5 @@ class upoelectro_cliente(models.Model):
     fecha = fields.Datetime('Fecha', required=True, autodate = True)
     importe = fields.Float('Importe', digit=10, required=True)
     direccion = fields.Text('Dirección de facturación', size=60)
-    cliente = fields.One2many(' upoelectro.upoelectro_cliente','upoelectro_cliente_nombre', 'Cliente')
+    cliente_id = fields.Many2one('upoelectro.upoelectro_cliente', 'Cliente')
+    empelado_id = fields.Many2one('upoelectro.upoelectro_empleado', 'Empleado')
