@@ -3,7 +3,7 @@
 	<data>
 		<record model="ir.ui.view" id="upoelectro_empleado_form">
 			<field name="name">upoelectro_empleado_form</field>
-			<field name="model">upoelectro.upoelectro_empleado</field>
+			<field name="model">upoelectro.empleado</field>
 			<field name="arch" type="xml">
 				<form string="Empleados">
 					<group string="Empleados">
@@ -23,7 +23,7 @@
 
 		<record model="ir.ui.view" id="upoelectro_empleado_tree_view">
 			<field name="name">upoelectro_empleado_tree</field>
-			<field name="model">upoelectro.upoelectro_empleado</field>
+			<field name="model">upoelectro.empleado</field>
 			<field name="arch" type="xml">
 				<tree string="tree_string">
 					<field name="name" />
@@ -42,7 +42,7 @@
 
 		<record id="act_upoelectro_empleado" model="ir.actions.act_window">
 			<field name="name">Empleados</field>
-			<field name="res_model">upoelectro.upoelectro_empleado</field>
+			<field name="res_model">upoelectro.empleado</field>
 			<field name="view_mode">tree,form</field>
 		</record>
 		<menuitem name="Empleados" id="upoelectro_empleado_submenu" parent="upoelectro"

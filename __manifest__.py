@@ -3,7 +3,7 @@
     'name': "upoelectro",
     'summary': """UPOELECTRO management""",
     'description': """UPOELECTRO management:classes, users, material...""",
-    'author': "Carlos Rodríguez desde luego no",
+    'author': "Ekipo 1 de travaho",
     'category': 'UPOElectro',
     'version': '0.1',
     'depends': ['base'],

@@ -3,14 +3,14 @@
 	<data>
 		<record model="ir.ui.view" id="upoelectro_venta_form">
 			<field name="name">upoelectro_venta_form</field>
-			<field name="model">upoelectro.upoelectro_venta</field>
+			<field name="model">upoelectro.venta</field>
 			<field name="arch" type="xml">
 				<form string="Ventas">
 					<group string="Ventas">
 						<field name="fecha" />
 						<field name="importe" />
 						<field name="direccion" />
-						<field name="cliente_id"/>
+						<field name="cliente_id" />
 						<field name="empleado_id" />
 					</group>
 				</form>
@@ -19,24 +19,35 @@
 
 		<record model="ir.ui.view" id="upoelectro_venta_tree_view">
 			<field name="name">upoelectro_venta_tree</field>
-			<field name="model">upoelectro.upoelectro_venta</field>
+			<field name="model">upoelectro.venta</field>
 			<field name="arch" type="xml">
 				<tree string="tree_string">
 					<field name="fecha" />
 					<field name="importe" />
 					<field name="direccion" />
-					<field name="cliente_id"/>
+					<field name="cliente_id" />
 					<field name="empleado_id" />
 				</tree>
 			</field>
 		</record>
 
+		<!-- Calendar View -->
+		<record model="ir.ui.view" id="view_upoelectro_venta_calendar">
+			<field name="name">upoelectro_venta_calendar</field>
+			<field name="model">upoelectro.venta</field>
+			<field name="type">calendar</field>
+			<field name="arch" type="xml">
+				<calendar string="Ventas" color="cliente_id"
+					date_start="fecha" date_stop="fecha" mode="month">
+					<field name="importe" />
+				</calendar>
+			</field>
+		</record>
 
-		<record id="act_upoelectro_venta"
-			model="ir.actions.act_window">
+		<record id="act_upoelectro_venta" model="ir.actions.act_window">
 			<field name="name">Ventas</field>
-			<field name="res_model">upoelectro.upoelectro_venta</field>
-			<field name="view_mode">tree,form</field>
+			<field name="res_model">upoelectro.venta</field>
+			<field name="view_mode">tree,form,calendar</field>
 		</record>
 		<menuitem name="Ventas" id="upoelectro_venta_submenu"
 			parent="upoelectro" sequence="150" />

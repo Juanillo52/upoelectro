@@ -3,7 +3,7 @@
 	<data>
 		<record model="ir.ui.view" id="upoelectro_cliente_form">
 			<field name="name">upoelectro_cliente_form</field>
-			<field name="model">upoelectro.upoelectro_cliente</field>
+			<field name="model">upoelectro.cliente</field>
 			<field name="arch" type="xml">
 				<form string="Clientes">
 					<group string="Clientes">
@@ -21,7 +21,7 @@
 
 		<record model="ir.ui.view" id="upoelectro_cliente_tree_view">
 			<field name="name">upoelectro_cliente_tree</field>
-			<field name="model">upoelectro.upoelectro_cliente</field>
+			<field name="model">upoelectro.cliente</field>
 			<field name="arch" type="xml">
 				<tree string="tree_string">
 					<field name="nif" />
@@ -38,7 +38,7 @@
 
 		<record id="act_upoelectro_cliente" model="ir.actions.act_window">
 			<field name="name">Clientes</field>
-			<field name="res_model">upoelectro.upoelectro_cliente</field>
+			<field name="res_model">upoelectro.cliente</field>
 			<field name="view_mode">tree,form</field>
 		</record>
 		<menuitem id="upoelectro" name="UPOElectro" action="act_upoelectro_cliente" />

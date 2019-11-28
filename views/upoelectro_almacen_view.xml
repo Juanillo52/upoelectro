@@ -3,7 +3,7 @@
 	<data>
 		<record model="ir.ui.view" id="upoelectro_almacen_form">
 			<field name="name">upoelectro_almacen_form</field>
-			<field name="model">upoelectro.upoelectro_almacen</field>
+			<field name="model">upoelectro.almacen</field>
 			<field name="arch" type="xml">
 				<form string="Almacenes">
 					<group string="Almacenes">
@@ -18,7 +18,7 @@
 
 		<record model="ir.ui.view" id="upoelectro_almacen_tree_view">
 			<field name="name">upoelectro_almacen_tree</field>
-			<field name="model">upoelectro.upoelectro_almacen</field>
+			<field name="model">upoelectro.almacen</field>
 			<field name="arch" type="xml">
 				<tree string="tree_string">
 					<field name="identificador" />
@@ -33,7 +33,7 @@
 		<record id="act_upoelectro_almacen"
 			model="ir.actions.act_window">
 			<field name="name">Almacenes</field>
-			<field name="res_model">upoelectro.upoelectro_almacen</field>
+			<field name="res_model">upoelectro.almacen</field>
 			<field name="view_mode">tree,form</field>
 		</record>
 		<menuitem id="upoelectro" name="UPOElectro"

@@ -1,7 +1,7 @@
 from odoo import models, fields, api
 
-class upoelectro_cliente(models.Model):
-    _name = 'upoelectro.upoelectro_cliente'
+class cliente(models.Model):
+    _name = 'upoelectro.cliente'
 
     nif = fields.Char('DNI/NIF', size=9, required=True)
     name = fields.Char('Nombre completo', size=60, required=True)
@@ -9,4 +9,4 @@ class upoelectro_cliente(models.Model):
     correo = fields.Char('Correo', size=20)
     direccion = fields.Char('Dirección', size=20)
     foto = fields.Binary('Foto de perfil')
-    ventas_ids = fields.One2many('upoelectro.upoelectro_venta','cliente_id', 'Ventas') 
+    ventas_ids = fields.One2many('upoelectro.venta','cliente_id', 'Ventas') 

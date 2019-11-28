@@ -3,7 +3,7 @@
 	<data>
 		<record model="ir.ui.view" id="upoelectro_compra_form">
 			<field name="name">upoelectro_compra_form</field>
-			<field name="model">upoelectro.upoelectro_compra</field>
+			<field name="model">upoelectro.compra</field>
 			<field name="arch" type="xml">
 				<form string="Compras">
 					<group string="Compras">
@@ -19,7 +19,7 @@
 
 		<record model="ir.ui.view" id="upoelectro_compra_tree_view">
 			<field name="name">upoelectro_compra_tree</field>
-			<field name="model">upoelectro.upoelectro_compra</field>
+			<field name="model">upoelectro.compra</field>
 			<field name="arch" type="xml">
 				<tree string="tree_string">
 					<field name="fecha" />
@@ -35,7 +35,7 @@
 		<record id="act_upoelectro_compra"
 			model="ir.actions.act_window">
 			<field name="name">Compras</field>
-			<field name="res_model">upoelectro.upoelectro_compra</field>
+			<field name="res_model">upoelectro.compra</field>
 			<field name="view_mode">tree,form</field>
 		</record>
 		<menuitem name="Compras" id="upoelectro_compra_submenu"

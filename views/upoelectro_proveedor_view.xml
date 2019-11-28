@@ -3,7 +3,7 @@
 	<data>
 		<record model="ir.ui.view" id="upoelectro_proveedor_form">
 			<field name="name">upoelectro_proveedor_form</field>
-			<field name="model">upoelectro.upoelectro_proveedor</field>
+			<field name="model">upoelectro.proveedor</field>
 			<field name="arch" type="xml">
 				<form string="Proveedores">
 					<group string="Proveedores">
@@ -21,7 +21,7 @@
 
 		<record model="ir.ui.view" id="upoelectro_proveedor_tree_view">
 			<field name="name">upoelectro_proveedor_tree</field>
-			<field name="model">upoelectro.upoelectro_proveedor</field>
+			<field name="model">upoelectro.proveedor</field>
 			<field name="arch" type="xml">
 				<tree string="tree_string">
 					<field name="identificador" />
@@ -38,7 +38,7 @@
 
 		<record id="act_upoelectro_proveedor" model="ir.actions.act_window">
 			<field name="name">Proveedores</field>
-			<field name="res_model">upoelectro.upoelectro_proveedor</field>
+			<field name="res_model">upoelectro.proveedor</field>
 			<field name="view_mode">tree,form</field>
 		</record>
 		<menuitem id="upoelectro" name="UPOElectro" action="act_upoelectro_proveedor" />

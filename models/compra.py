@@ -1,10 +1,10 @@
 from odoo import models, fields, api
 
-class upoelectro_venta(models.Model):
-    _name = 'upoelectro.upoelectro_venta'
+class compra(models.Model):
+    _name = 'upoelectro.compra'
 
     fecha = fields.Datetime('Fecha', required=True, autodate = True)
     importe = fields.Float('Importe', digit=10, required=True)
     direccion = fields.Text('Dirección de facturación', size=60)
-    cliente_id = fields.Many2one('upoelectro.upoelectro_cliente', 'Cliente')
-    empleado_id = fields.Many2one('upoelectro.upoelectro_empleado', 'Empleado')
+    proveedor_id = fields.Many2one('upoelectro.proveedor', 'Proveedor')
+    empleado_id = fields.Many2one('upoelectro.empleado', 'Empleado')
