@@ -3,7 +3,11 @@
     'name': "upoelectro",
     'summary': """UPOELECTRO management""",
     'description': """UPOELECTRO management:classes, users, material...""",
+<<<<<<< HEAD
     'author': "Equipo 01",
+=======
+    'author': "Equipo 1 de trabajo",
+>>>>>>> branch 'master' of https://github.com/Juanillo52/upoelectro.git
     'category': 'UPOElectro',
     'version': '0.1',
     'depends': ['base'],
