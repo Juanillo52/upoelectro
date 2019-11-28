@@ -6,14 +6,9 @@ class empleado(models.Model):
     name = fields.Char('Nombre completo', size=60, required=True)
     usuario = fields.Char('Nombre de usuario', size=60, required=True)
     telefono = fields.Char('Teléfono', size=9)
-<<<<<<< HEAD
     correo = fields.Char('Correo', size=40)
     direccion = fields.Char('Dirección', size=60)
-=======
-    correo = fields.Char('Correo', size=20)
-    direccion = fields.Char('Dirección', size=20)
     sueldo= fields.Float('Sueldo')
->>>>>>> branch 'master' of https://github.com/Juanillo52/upoelectro.git
     foto = fields.Binary('Foto de perfil')
     ventas_ids = fields.One2many('upoelectro.venta','empleado_id', 'Ventas')
     compras_ids = fields.One2many('upoelectro.compra','empleado_id', 'Compras')
