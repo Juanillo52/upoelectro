@@ -31,12 +31,30 @@
 			</field>
 		</record>
 
+		<record model="ir.ui.view" id="upoelectro_compra_search">
+			<field name="name">upoelectro_compra_search</field>
+			<field name="model">upoelectro.compra</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Compras">
+					<filter string="Grandes compras"
+						domain="[('importe','>','2000')]" />
+					<separator orientation="vertical" />
+					<group expand="0" string="Agrupar por...">
+						<filter name="group_by_empleado" string="Empleado"
+							context="{'group_by':'empleado_id'}" />
+					</group>
+				</search>
+			</field>
+		</record>
+		
 
 		<record id="act_upoelectro_compra"
 			model="ir.actions.act_window">
 			<field name="name">Compras</field>
 			<field name="res_model">upoelectro.compra</field>
 			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="upoelectro_compra_search"/>
 		</record>
 		<menuitem name="Compras" id="upoelectro_compra_submenu"
 			parent="upoelectro" sequence="400" />

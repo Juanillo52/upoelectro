@@ -8,6 +8,7 @@ class empleado(models.Model):
     telefono = fields.Char('Teléfono', size=9)
     correo = fields.Char('Correo', size=20)
     direccion = fields.Char('Dirección', size=20)
+    sueldo= fields.Float('Sueldo')
     foto = fields.Binary('Foto de perfil')
     ventas_ids = fields.One2many('upoelectro.venta','empleado_id', 'Ventas')
     compras_ids = fields.One2many('upoelectro.compra','empleado_id', 'Compras')

@@ -3,7 +3,7 @@
     'name': "upoelectro",
     'summary': """UPOELECTRO management""",
     'description': """UPOELECTRO management:classes, users, material...""",
-    'author': "Ekipo 1 de travaho",
+    'author': "Equipo 1 de trabajo",
     'category': 'UPOElectro',
     'version': '0.1',
     'depends': ['base'],
