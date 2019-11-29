@@ -12,6 +12,9 @@
 						<field name="telefono" />
 						<field name="correo" />
 						<field name="direccion" />
+						<field name="codigo_postal" />
+						<field name="ciudad" />
+						<field name="provincia" />
 						<field name="sueldo"/>
 						<field name="foto" widget="image" />
 						<field name="ventas_ids" />
@@ -33,7 +36,6 @@
 					<field name="correo" />
 					<field name="direccion" />
 					<field name="sueldo"/>
-					<field name="foto" widget="image" />
 					<field name="ventas_ids" />
 					<field name="compras_ids" />
 					<field name="almacenes_ids" />

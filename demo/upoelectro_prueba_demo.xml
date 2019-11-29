@@ -6,6 +6,9 @@
 			<field name="telefono">595646737</field>
 			<field name="correo">andres@gmail.com</field>
 			<field name="direccion">C/Afan de Ribera, 134</field>
+			<field name="codigo_postal">41006</field>
+			<field name="ciudad">Sevilla</field>
+			<field name="provincia">Sevilla</field>
 		</record>
 		<record id="empleado01" model="upoelectro.empleado">
 			<field name="name">Antonio Machado</field>
@@ -13,6 +16,9 @@
 			<field name="telefono">655789123</field>
 			<field name="correo">antonio@gmail.com</field>
 			<field name="direccion">C/Lisboa, 15</field>
+			<field name="codigo_postal">41006</field>
+			<field name="ciudad">Sevilla</field>
+			<field name="provincia">Sevilla</field>
 			<field name="sueldo">1500.45</field>
 		</record>
 		<record id="empleado02" model="upoelectro.empleado">
@@ -21,6 +27,9 @@
 			<field name="telefono">665789123</field>
 			<field name="correo">jose@gmail.com</field>
 			<field name="direccion">C/Galicia, 154</field>
+			<field name="codigo_postal">41006</field>
+			<field name="ciudad">Sevilla</field>
+			<field name="provincia">Sevilla</field>
 			<field name="sueldo">1400.74</field>
 		</record>
 		<record id="cliente01" model="upoelectro.cliente">
@@ -29,6 +38,9 @@
 			<field name="telefono">555666777</field>
 			<field name="correo">hector@gmail.com</field>
 			<field name="direccion">C/Ataulfo Argenta, 175</field>
+			<field name="codigo_postal">41702</field>
+			<field name="ciudad">Dos Hermanas</field>
+			<field name="provincia">Sevilla</field>
 		</record>
 		<record id="cliente02" model="upoelectro.cliente">
 			<field name="nif">23456789R</field>
@@ -36,18 +48,27 @@
 			<field name="telefono">565666787</field>
 			<field name="correo">juan@gmail.com</field>
 			<field name="direccion">C/Cristobal Colon, 150</field>
+			<field name="codigo_postal">41710</field>
+			<field name="ciudad">Utrera</field>
+			<field name="provincia">Sevilla</field>
 		</record>
 		<record id="venta01" model="upoelectro.venta">
 			<field name="fecha">16/12/2019</field>
 			<field name="importe">154.5</field>
 			<field name="direccion">c/Puerto de la Mora, 135</field>
+			<field name="codigo_postal">41006</field>
+			<field name="ciudad">Sevilla</field>
+			<field name="provincia">Sevilla</field>
 			<field name="empleado_id" ref="empleado01" />
 			<field name="cliente_id" ref="cliente01" />
 		</record>
 		<record id="venta02" model="upoelectro.venta">
 			<field name="fecha">15/12/2019</field>
 			<field name="importe">10.4</field>
-			<field name="direccion">Av. de Asturias, 15</field>
+			<field name="direccion">C/Asturias, 15</field>
+			<field name="codigo_postal">41010</field>
+			<field name="ciudad">Sevilla</field>
+			<field name="provincia">Sevilla</field>
 			<field name="empleado_id" ref="empleado02" />
 			<field name="cliente_id" ref="cliente02" />
 		</record>
@@ -57,6 +78,9 @@
 			<field name="telefono">674789123</field>
 			<field name="correo">dolores@gmail.com</field>
 			<field name="direccion">C/Nervion, 124</field>
+			<field name="codigo_postal">41005</field>
+			<field name="ciudad">Sevilla</field>
+			<field name="provincia">Sevilla</field>
 		</record>
 		<record id="proveedor02" model="upoelectro.proveedor">
 			<field name="identificador">2</field>
@@ -64,11 +88,17 @@
 			<field name="telefono">644789123</field>
 			<field name="correo">juanAntonio@gmail.com</field>
 			<field name="direccion">C/Hytasa, 254</field>
+			<field name="codigo_postal">41006</field>
+			<field name="ciudad">Sevilla</field>
+			<field name="provincia">Sevilla</field>
 		</record>
 		<record id="compra01" model="upoelectro.compra">
 			<field name="fecha">13/12/2019</field>
 			<field name="importe">254.5</field>
 			<field name="direccion">C/Juan Talavera Heredia, 164</field>
+			<field name="codigo_postal">41006</field>
+			<field name="ciudad">Sevilla</field>
+			<field name="provincia">Sevilla</field>
 			<field name="proveedor_id" ref="proveedor02" />
 			<field name="empleado_id" ref="empleado02" />
 		</record>
@@ -76,6 +106,9 @@
 			<field name="fecha">10/12/2019</field>
 			<field name="importe">100.4</field>
 			<field name="direccion">C/Holanda, 154</field>
+			<field name="codigo_postal">41089</field>
+			<field name="ciudad">Montequinto</field>
+			<field name="provincia">Sevilla</field>
 			<field name="proveedor_id" ref="proveedor01" />
 			<field name="empleado_id" ref="empleado01" />
 		</record>

@@ -10,6 +10,9 @@
 						<field name="fecha" />
 						<field name="importe" />
 						<field name="direccion" />
+						<field name="codigo_postal" />
+						<field name="ciudad" />
+						<field name="provincia" />
 						<field name="cliente_id" />
 						<field name="empleado_id" />
 					</group>

@@ -23,7 +23,6 @@
 				<tree string="tree_string">
 					<field name="identificador" />
 					<field name="localizacion" />
-					<field name="foto" widget="image" />
 					<field name="empleados_ids" />
 				</tree>
 			</field>

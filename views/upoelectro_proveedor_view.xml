@@ -12,6 +12,9 @@
 						<field name="telefono" />
 						<field name="correo" />
 						<field name="direccion" />
+						<field name="codigo_postal" />
+						<field name="ciudad" />
+						<field name="provincia" />
 						<field name="foto" widget="image"/>
 						<field name="compras_ids"/>
 					</group>
@@ -29,7 +32,6 @@
 					<field name="telefono" />
 					<field name="correo" />
 					<field name="direccion" />
-					<field name="foto" widget="image"/>
 					<field name="compras_ids"/>
 				</tree>
 			</field>
