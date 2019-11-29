@@ -4,6 +4,6 @@ class almacen(models.Model):
     _name = 'upoelectro.almacen'
 
     identificador = fields.Integer('ID', required=True)
-    localizacion = fields.Char('Localizacion', size=60, required=True)
+    localizacion = fields.Char('Localizacion', size=90, required=True)
     foto = fields.Binary('Nuestras instalaciones')
     empleados_ids = fields.Many2many('upoelectro.empleado', string='Empleados')
