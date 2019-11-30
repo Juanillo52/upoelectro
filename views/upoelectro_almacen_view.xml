@@ -9,7 +9,7 @@
 					<group string="Almacenes">
 						<field name="identificador" />
 						<field name="localizacion" />
-						<field name="foto" widget="image" />
+						<field name="foto" widget="image" width="300px"/>
 						<field name="empleados_ids" />
 					</group>
 				</form>

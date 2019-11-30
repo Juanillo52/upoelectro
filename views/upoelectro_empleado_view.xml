@@ -16,7 +16,7 @@
 						<field name="ciudad" />
 						<field name="provincia" />
 						<field name="sueldo"/>
-						<field name="foto" widget="image" />
+						<field name="foto" widget="image" width="100px" />
 						<field name="ventas_ids" />
 						<field name="compras_ids" />
 						<field name="almacenes_ids" />
