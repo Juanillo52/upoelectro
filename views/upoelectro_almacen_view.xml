@@ -11,6 +11,7 @@
 						<field name="localizacion" />
 						<field name="foto" widget="image" width="300px"/>
 						<field name="empleados_ids" />
+						<field name="categorias_ids"/>
 					</group>
 				</form>
 			</field>
@@ -24,6 +25,7 @@
 					<field name="identificador" />
 					<field name="localizacion" />
 					<field name="empleados_ids" />
+					<field name="categorias_ids"/>
 				</tree>
 			</field>
 		</record>
