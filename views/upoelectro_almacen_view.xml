@@ -9,9 +9,9 @@
 					<group string="Almacenes">
 						<field name="identificador" />
 						<field name="localizacion" />
-						<field name="foto" widget="image" width="300px"/>
+						<field name="foto" widget="image" width="300px" />
 						<field name="empleados_ids" />
-						<field name="categorias_ids"/>
+						<field name="categorias_ids" />
 					</group>
 				</form>
 			</field>
@@ -25,17 +25,28 @@
 					<field name="identificador" />
 					<field name="localizacion" />
 					<field name="empleados_ids" />
-					<field name="categorias_ids"/>
+					<field name="categorias_ids" />
 				</tree>
 			</field>
 		</record>
-
+		
+		<record model="ir.ui.view" id="upoelectro_categoria_view_search">
+			<field name="name">upoelectro_categoria_view_search</field>
+			<field name="model">upoelectro.almacen</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Categorias">
+					<field name="categorias_ids" />
+				</search>
+			</field>
+		</record>
 
 		<record id="act_upoelectro_almacen"
 			model="ir.actions.act_window">
 			<field name="name">Almacenes</field>
 			<field name="res_model">upoelectro.almacen</field>
 			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="upoelectro_categoria_view_search"/>
 		</record>
 		<menuitem id="upoelectro" name="UPOElectro"
 			action="act_upoelectro_almacen" />
