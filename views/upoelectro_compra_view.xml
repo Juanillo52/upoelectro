@@ -30,7 +30,13 @@
 						<field name="provincia" />
 						<field name="proveedor_id" />
 						<field name="empleado_id" />
-						<field name="lineacompra_ids" />
+						<field name="lineacompra_ids" >
+							<tree>
+								<field name="cantidad" />
+								<field name="precio" />
+								<field name="articulo_id" />
+							</tree>
+						</field>
 					</group>
 				</form>
 			</field>

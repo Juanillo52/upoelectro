@@ -29,3 +29,19 @@ class venta(models.Model):
     @api.one
     def btn_submit_to_enviado(self):
         self.write({'state':'enviado'})
+        
+    @api.onchange('lineaventa_ids')
+    def onchange_lineaventa(self):
+        if self.state == 'enviado':
+            
+            for lineaventa in self.lineaventa_ids:
+                lineaventa.articulo_id.stock = lineaventa.articulo_id.stock - lineaventa.cantidad
+    
+    @api.onchange('lineaventa_ids')
+    def onchange_venta(self):
+        self.importe = 0
+        
+        for lineaventa in self.lineaventa_ids:
+            self.importe = self.importe + lineaventa.precio
+    
+    

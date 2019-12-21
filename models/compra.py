@@ -34,3 +34,18 @@ class compra(models.Model):
     @api.one
     def btn_submit_to_recibida(self):
         self.write({'state':'recibida'})
+        
+    @api.onchange('lineacompra_ids')
+    def onchange_lineacompra(self):
+        if self.state == 'recibida':
+            
+            for lineacompra in self.lineacompra_ids:
+                lineacompra.articulo_id.stock = lineacompra.articulo_id.stock + lineacompra.cantidad
+    
+    @api.onchange('lineacompra_ids')
+    def onchange_compra(self):
+        self.importe = 0
+        
+        for lineacompra in self.lineacompra_ids:
+            self.importe = self.importe + lineacompra.precio
+    
