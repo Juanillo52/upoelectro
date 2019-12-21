@@ -5,6 +5,9 @@ class compra(models.Model):
 
     fecha = fields.Datetime('Fecha', required=True, autodate = True)
     importe = fields.Float('Importe', digit=10, required=True)
-    direccion = fields.Text('Dirección de facturación', size=60)
+    direccion = fields.Char('Dirección', size=60)
+    codigo_postal = fields.Char('Código postal', size=5)
+    ciudad = fields.Char('Ciudad', size=60)
+    provincia = fields.Char('Ciudad', size=60)
     proveedor_id = fields.Many2one('upoelectro.proveedor', 'Proveedor')
     empleado_id = fields.Many2one('upoelectro.empleado', 'Empleado')

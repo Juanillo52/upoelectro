@@ -29,7 +29,6 @@
 					<field name="telefono" />
 					<field name="correo" />
 					<field name="direccion" />
-					<field name="foto" widget="image"/>
 					<field name="ventas_ids"/>
 				</tree>
 			</field>
