@@ -11,6 +11,7 @@ class venta(models.Model):
     provincia = fields.Char('Provincia', size=60)
     cliente_id = fields.Many2one('upoelectro.cliente', 'Cliente')
     empleado_id = fields.Many2one('upoelectro.venta', 'Empleado')
+    lineaventa_ids = fields.One2many('upoelectro.lineaventa', 'venta_id', 'Pedido')
     state = fields.Selection([('solicitante','Solicitante'),
                               ('enproceso','En Proceso'),
                               ('cancelado','Cancelado'),

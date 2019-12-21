@@ -12,8 +12,4 @@ class articulo(models.Model):
     precio = fields.Float('Precio', required=True)
     stock = fields.Integer('Stock', required=True)
     categoria_nombre = fields.Many2one('upoelectro.categoria', 'Categoria')
-    
-    @api.onchange('gymclass_ids')
-    def onchange_gymclass(self):
-        if self.state != 'admitido':
-            
+    lineacompra_ids = fields.One2many('upoelectro.lineacompra', 'articulo_id', 'Articulo')

@@ -11,6 +11,7 @@ class compra(models.Model):
     provincia = fields.Char('Provincia', size=60)
     proveedor_id = fields.Many2one('upoelectro.proveedor', 'Proveedor')
     empleado_id = fields.Many2one('upoelectro.empleado', 'Empleado')
+    lineacompra_ids = fields.One2many('upoelectro.lineacompra', 'compra_id', 'Pedido')
     state = fields.Selection([('solicitada','Solicitada'),
                               ('aceptada','Aceptada'),
                               ('enconflicto','En Conflicto'),

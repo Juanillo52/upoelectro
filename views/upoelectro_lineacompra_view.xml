@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="upoelectro_lineacompra_form">
+			<field name="name">upoelectro_lineacompra_form</field>
+			<field name="model">upoelectro.lineacompra</field>
+			<field name="arch" type="xml">
+				<form string="Lineas de Compra">
+					<group string="Lineas de Compra">
+						<field name="cantidad" />
+						<field name="precio" />
+						<field name="articulo_id" />
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view"
+			id="upoelectro_lineacompra_tree_view">
+			<field name="name">upoelectro_lineacompra_tree</field>
+			<field name="model">upoelectro.lineacompra</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="cantidad" />
+					<field name="precio" />
+					<field name="articulo_id" />
+				</tree>
+			</field>
+		</record>
+
+		<record id="act_upoelectro_lineacompra"
+			model="ir.actions.act_window">
+			<field name="name">Lineas de Compra</field>
+			<field name="res_model">upoelectro.lineacompra</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+	</data>
+</odoo> 

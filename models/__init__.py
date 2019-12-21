@@ -1,3 +1,3 @@
 # -*- coding: utf-8 -*-
 
-from . import models, cliente, venta, empleado, proveedor, compra, almacen, categoria, articulo
+from . import models, cliente, venta, empleado, proveedor, compra, almacen, categoria, articulo, lineacompra, lineaventa
