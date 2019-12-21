@@ -37,11 +37,25 @@
 			</field>
 		</record>
 
+		<record model="ir.ui.view" id="view_upoelectro_proveedor_search">
+			<field name="name">view_upoelectro_proveedor_search</field>
+			<field name="model">upoelectro.proveedor</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Classes">
+					<group expand="0" string="Agrupar por…">
+						<filter name="group_by_provincia" string="Provincia"
+							context="{'group_by':'provincia'}" />
+					</group>
+				</search>
+			</field>
+		</record>
 
 		<record id="act_upoelectro_proveedor" model="ir.actions.act_window">
 			<field name="name">Proveedores</field>
 			<field name="res_model">upoelectro.proveedor</field>
 			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_upoelectro_proveedor_search" />
 		</record>
 		<menuitem id="upoelectro" name="UPOElectro" action="act_upoelectro_proveedor" />
 		<menuitem name="Proveedores" id="upoelectro_proveedor_submenu" parent="upoelectro"
