@@ -6,6 +6,15 @@
 			<field name="model">upoelectro.venta</field>
 			<field name="arch" type="xml">
 				<form string="Ventas">
+					<header>
+						<button name="btn_submit_to_enproceso" string="Aceptar Pedido"
+							type="object" class="oe_highlight" states="solicitante" />
+						<button name="btn_submit_to_cancelado" string="Cancelar Pedido"
+							type="object" class="oe_highlight" states="solicitante" />
+						<button name="btn_submit_to_enviado" string="Enviar Pedido"
+							type="object" class="oe_highlight" states="enproceso" />
+						<field name='state' widget='statusbar' />
+					</header>
 					<group string="Ventas">
 						<field name="fecha" />
 						<field name="importe" />

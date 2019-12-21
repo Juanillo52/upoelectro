@@ -23,6 +23,7 @@
 				<tree string="tree_string">
 					<field name="name" />
 					<field name="descripcion" />
+					<field name="almacen_id"/>
 				</tree>
 			</field>
 		</record>
@@ -33,7 +34,6 @@
 			<field name="name">Categorías</field>
 			<field name="res_model">upoelectro.categoria</field>
 			<field name="view_mode">tree,form</field>
-			<field name="almacen_id"/>
 		</record>
 		<menuitem id="upoelectro" name="UPOElectro"
 			action="act_upoelectro_categoria" />
