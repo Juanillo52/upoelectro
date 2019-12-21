@@ -24,7 +24,6 @@
 				<tree string="tree_string">
 					<field name="name" />
 					<field name="descripcion" />
-					<field name="articulo_id"/>
 					<field name="almacen_id"/>
 				</tree>
 			</field>
