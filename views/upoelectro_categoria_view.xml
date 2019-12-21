@@ -26,7 +26,6 @@
 					<field name="descripcion" />
 					<field name="articulo_id"/>
 					<field name="almacen_id"/>
-					<field name="articulo_id"/>
 				</tree>
 			</field>
 		</record>
