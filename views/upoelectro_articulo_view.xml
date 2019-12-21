@@ -15,6 +15,7 @@
 						<field name="caracteristicas" />
 						<field name="precio" />
 						<field name="stock" />
+						<field name="categoria_nombre"/>
 					</group>
 				</form>
 			</field>
@@ -33,6 +34,7 @@
 					<field name="caracteristicas" />
 					<field name="precio" />
 					<field name="stock" />
+					<field name="categoria_nombre"/>
 				</tree>
 			</field>
 		</record>

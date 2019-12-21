@@ -10,6 +10,6 @@ class proveedor(models.Model):
     direccion = fields.Char('Dirección', size=60)
     codigo_postal = fields.Char('Código postal', size=5)
     ciudad = fields.Char('Ciudad', size=60)
-    provincia = fields.Char('Ciudad', size=60)
+    provincia = fields.Char('Provincia', size=60)
     foto = fields.Binary('Foto de perfil')
     compras_ids = fields.One2many('upoelectro.compra','proveedor_id', 'Compras')

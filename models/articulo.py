@@ -11,3 +11,4 @@ class articulo(models.Model):
     caracteristicas = fields.Text('Caracteristicas', size=100, required=True)
     precio = fields.Float('Precio', required=True)
     stock = fields.Integer('Stock', required=True)
+    categoria_nombre = fields.Many2one('upoelectro.categoria', 'Categoria')

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="upoelectro_categoria_form">
+			<field name="name">upoelectro_categoria_form</field>
+			<field name="model">upoelectro.categoria</field>
+			<field name="arch" type="xml">
+				<form string="Categorías">
+					<group string="Categorías">
+						<field name="name" />
+						<field name="descripcion" />
+						<field name="imagen" widget="image" width="300px" />
+						<field name="almacen_id"/>
+						<field name="articulo_id"/>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upoelectro_categoria_tree_view">
+			<field name="name">upoelectro_categoria_tree</field>
+			<field name="model">upoelectro.categoria</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="name" />
+					<field name="descripcion" />
+					<field name="articulo_id"/>
+					<field name="almacen_id"/>
+					<field name="articulo_id"/>
+				</tree>
+			</field>
+		</record>
+
+
+		<record id="act_upoelectro_categoria"
+			model="ir.actions.act_window">
+			<field name="name">Categorías</field>
+			<field name="res_model">upoelectro.categoria</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem id="upoelectro" name="UPOElectro"
+			action="act_upoelectro_categoria" />
+		<menuitem name="Categorías" id="upoelectro_categoria_submenu"
+			parent="upoelectro" sequence="450" />
+		<menuitem name="Ver Categorías" id="ver_categorias_submenu"
+			parent="upoelectro_categoria_submenu" sequence="460"
+			action="act_upoelectro_categoria" />
+	</data>
+</odoo> 
