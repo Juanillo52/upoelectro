@@ -6,6 +6,21 @@
 			<field name="model">upoelectro.compra</field>
 			<field name="arch" type="xml">
 				<form string="Compras">
+					<header>
+						<button name="btn_submit_to_aceptada"
+							string="Compra Aceptada por el Proveedor" type="object"
+							class="oe_highlight" states="solicitada,enconflicto" />
+						<button name="btn_submit_to_enconflicto"
+							string="Compra En Conflicto" type="object" class="oe_highlight"
+							states="solicitada" />
+						<button name="btn_submit_to_cancelada"
+							string="Cancelar Compra" type="object" class="oe_highlight"
+							states="solictada,enconflicto" />
+						<button name="btn_submit_to_recibida"
+							string="Compra Recibida" type="object" class="oe_highlight"
+							states="aceptada" />
+						<field name='state' widget='statusbar' />
+					</header>
 					<group string="Compras">
 						<field name="fecha" />
 						<field name="importe" />
@@ -13,7 +28,7 @@
 						<field name="codigo_postal" />
 						<field name="ciudad" />
 						<field name="provincia" />
-						<field name="proveedor_id"/>
+						<field name="proveedor_id" />
 						<field name="empleado_id" />
 					</group>
 				</form>
@@ -28,7 +43,7 @@
 					<field name="fecha" />
 					<field name="importe" />
 					<field name="direccion" />
-					<field name="proveedor_id"/>
+					<field name="proveedor_id" />
 					<field name="empleado_id" />
 				</tree>
 			</field>
@@ -50,14 +65,14 @@
 				</search>
 			</field>
 		</record>
-		
+
 
 		<record id="act_upoelectro_compra"
 			model="ir.actions.act_window">
 			<field name="name">Compras</field>
 			<field name="res_model">upoelectro.compra</field>
 			<field name="view_mode">tree,form</field>
-			<field name="search_view_id" ref="upoelectro_compra_search"/>
+			<field name="search_view_id" ref="upoelectro_compra_search" />
 		</record>
 		<menuitem name="Compras" id="upoelectro_compra_submenu"
 			parent="upoelectro" sequence="400" />

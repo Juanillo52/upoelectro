@@ -11,6 +11,7 @@
 						<field name="descripcion" />
 						<field name="imagen" widget="image" width="300px" />
 						<field name="almacen_id"/>
+						<field name="articulo_id"/>
 					</group>
 				</form>
 			</field>
@@ -24,6 +25,7 @@
 					<field name="name" />
 					<field name="descripcion" />
 					<field name="almacen_id"/>
+					<field name="articulo_id"/>
 				</tree>
 			</field>
 		</record>

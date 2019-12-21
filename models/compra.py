@@ -11,3 +11,25 @@ class compra(models.Model):
     provincia = fields.Char('Provincia', size=60)
     proveedor_id = fields.Many2one('upoelectro.proveedor', 'Proveedor')
     empleado_id = fields.Many2one('upoelectro.empleado', 'Empleado')
+    state = fields.Selection([('solicitada','Solicitada'),
+                              ('aceptada','Aceptada'),
+                              ('enconflicto','En Conflicto'),
+                              ('cancelada', 'Cancelada'),
+                              ('recibida','Recibida'),],
+                              'Estado',
+                              default='solicitada')
+    @api.one
+    def btn_submit_to_aceptada(self):
+        self.write({'state':'aceptada'})
+        
+    @api.one
+    def btn_submit_to_enconflicto(self):
+        self.write({'state':'enconflicto'})
+    
+    @api.one
+    def btn_submit_to_cancelada(self):
+        self.write({'state':'cancelada'})
+        
+    @api.one
+    def btn_submit_to_recibida(self):
+        self.write({'state':'recibida'})

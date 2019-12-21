@@ -7,3 +7,4 @@ class categoria(models.Model):
     descripcion = fields.Char('Descripción', size=9)
     imagen = fields.Binary('Imagen de la categoría')
     almacen_id = fields.Many2one('upoelectro.almacen', 'Almacén')
+    articulo_id = fields.One2many('upoelectro.articulo','categoria_nombre', 'Articulos') 

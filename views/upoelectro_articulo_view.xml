@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+	<data>
+		<record model="ir.ui.view" id="upoelectro_articulo_form">
+			<field name="name">upoelectro_articulo_form</field>
+			<field name="model">upoelectro.articulo</field>
+			<field name="arch" type="xml">
+				<form string="Articulos">
+					<group string="Articulos">
+						<field name="name" />
+						<field name="identificador" />
+						<field name="descripcion" />
+						<field name="marca" />
+						<field name="imagen" widget="image" />
+						<field name="caracteristicas" />
+						<field name="precio" />
+						<field name="stock" />
+						<field name="categoria_nombre"/>
+					</group>
+				</form>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="upoelectro_articulo_tree_view">
+			<field name="name">upoelectro_articulo_tree</field>
+			<field name="model">upoelectro.articulo</field>
+			<field name="arch" type="xml">
+				<tree string="tree_string">
+					<field name="name" />
+					<field name="identificador" />
+					<field name="descripcion" />
+					<field name="marca" />
+					<field name="imagen" widget="image" />
+					<field name="caracteristicas" />
+					<field name="precio" />
+					<field name="stock" />
+					<field name="categoria_nombre"/>
+				</tree>
+			</field>
+		</record>
+
+
+		<record id="act_upoelectro_articulo"
+			model="ir.actions.act_window">
+			<field name="name">Articulos</field>
+			<field name="res_model">upoelectro.articulo</field>
+			<field name="view_mode">tree,form</field>
+		</record>
+		<menuitem id="upoelectro" name="UPOElectro"
+			action="act_upoelectro_articulo" />
+		<menuitem name="Articulos" id="upoelectro_articulo_submenu"
+			parent="upoelectro" sequence="500" />
+		<menuitem name="Ver articulos" id="ver_articulos_submenu"
+			parent="upoelectro_articulo_submenu" sequence="510"
+			action="act_upoelectro_articulo" />
+	</data>
+</odoo> 

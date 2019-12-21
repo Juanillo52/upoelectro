@@ -45,6 +45,7 @@
 			<field name="ciudad">Dos Hermanas</field>
 			<field name="provincia">Sevilla</field>
 			<field name="foto" type="base64" file="upoelectro/img/cliente01.jpg" />
+
 		</record>
 		<record id="cliente02" model="upoelectro.cliente">
 			<field name="nif">23456789R</field>
@@ -56,6 +57,7 @@
 			<field name="ciudad">Utrera</field>
 			<field name="provincia">Sevilla</field>
 			<field name="foto" type="base64" file="upoelectro/img/cliente02.jpg" />
+
 		</record>
 		<record id="venta01" model="upoelectro.venta">
 			<field name="fecha">16/12/2019</field>
@@ -87,6 +89,7 @@
 			<field name="ciudad">Sevilla</field>
 			<field name="provincia">Sevilla</field>
 			<field name="foto" type="base64" file="upoelectro/img/proveedor01.jpg" />
+
 		</record>
 		<record id="proveedor02" model="upoelectro.proveedor">
 			<field name="identificador">2</field>
@@ -98,6 +101,7 @@
 			<field name="ciudad">Sevilla</field>
 			<field name="provincia">Sevilla</field>
 			<field name="foto" type="base64" file="upoelectro/img/proveedor02.jpg" />
+
 		</record>
 		<record id="compra01" model="upoelectro.compra">
 			<field name="fecha">13/12/2019</field>
