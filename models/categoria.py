@@ -12,7 +12,6 @@ class categoria(models.Model):
     
     @api.depends('articulos_ids')
     def _articulos_count(self):
-
         x = self.env['upoelectro.categoria']
         
         for categoria in self:

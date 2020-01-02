@@ -6,6 +6,8 @@
 			<field name="model">upoelectro.almacen</field>
 			<field name="arch" type="xml">
 				<form string="Almacenes">
+					<newline></newline> 
+					<button name="eliminarEmpleadosCategorias" string="Vaciar almacen" type="object"></button> 
 					<group string="Almacenes">
 						<field name="identificador" />
 						<field name="localizacion" />
@@ -26,7 +28,6 @@
 					<field name="localizacion" />
 					<field name="nEmp" />
 					<field name="categorias_ids" />
-					<field name="num_empleados" />
 				</tree>
 			</field>
 		</record>

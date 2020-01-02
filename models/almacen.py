@@ -11,6 +11,8 @@ class almacen(models.Model):
     
     nEmp = fields.Integer(compute='_empleados_count',string='Nº Empleados',store=True)
     
+    _sql_constraints = [('almacen_identificador_unique','UNIQUE (identificador)','El identificador debe ser único')]
+    
     @api.one
     @api.depends('empleados_ids')
     def _empleados_count(self):
@@ -25,5 +27,8 @@ class almacen(models.Model):
                 cont+=1
             
             almacen.nEmp= cont
-            
-    _sql_constraints = [('almacen_identificador_unique','UNIQUE (identificador)','El identificador debe ser único')]
+
+    
+    def eliminarEmpleadosCategorias(self):         
+        self.write({'empleados_ids':[ (5,  ) ]})
+        self.write({'categorias_ids':[ (5,  ) ]})    
