@@ -13,3 +13,20 @@ class proveedor(models.Model):
     provincia = fields.Char('Provincia', size=60)
     foto = fields.Binary('Foto de perfil')
     compras_ids = fields.One2many('upoelectro.compra','proveedor_id', 'Compras')
+    nCompras = fields.Integer(compute='_compras_count',string='Nº Compras',store=True)
+    
+    @api.depends('compras_ids')
+    def _compras_count(self):
+
+        x = self.env['upoelectro.proveedor']
+        
+        for proveedor in self:
+            cont = 0
+        
+            for rec in proveedor.compras_ids:
+            
+                cont+=1
+            
+            proveedor.nCompras= cont
+    
+    _sql_constraints = [('proveedor_identificador_unique','UNIQUE (identificador)','El identificador debe ser único')]

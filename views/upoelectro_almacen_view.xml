@@ -24,7 +24,7 @@
 				<tree string="tree_string">
 					<field name="identificador" />
 					<field name="localizacion" />
-					<field name="empleados_ids" />
+					<field name="nEmp" />
 					<field name="categorias_ids" />
 					<field name="num_empleados" />
 				</tree>
@@ -41,12 +41,23 @@
 				</search>
 			</field>
 		</record>
+		
+		<record model="ir.ui.view" id="upoelectro_almacen_graph">
+			<field name="name">Empleados por almacén</field>
+			<field name="model">upoelectro.almacen</field>
+			<field name="arch" type="xml">
+				<graph string="Empleados" type="bar">
+					<field name="localizacion" type="row" />
+					<field name="nEmp" type="measure" />
+				</graph>
+			</field>
+		</record>
 
 		<record id="act_upoelectro_almacen"
 			model="ir.actions.act_window">
 			<field name="name">Almacenes</field>
 			<field name="res_model">upoelectro.almacen</field>
-			<field name="view_mode">tree,form</field>
+			<field name="view_mode">tree,form,graph</field>
 			<field name="search_view_id" ref="upoelectro_categoria_view_search"/>
 		</record>
 		
