@@ -13,3 +13,6 @@ class articulo(models.Model):
     stock = fields.Integer('Stock', required=True)
     categoria_nombre = fields.Many2one('upoelectro.categoria', 'Categoria')
     lineacompra_ids = fields.One2many('upoelectro.lineacompra', 'articulo_id', 'Articulo')
+    
+    
+    _sql_constraints = [('articulo_identificador_unique','UNIQUE (identificador)','El identificador debe ser único')]

@@ -28,3 +28,5 @@ class proveedor(models.Model):
                 cont+=1
             
             proveedor.nCompras= cont
+    
+    _sql_constraints = [('proveedor_identificador_unique','UNIQUE (identificador)','El identificador debe ser único')]

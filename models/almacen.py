@@ -12,7 +12,7 @@ class almacen(models.Model):
     nEmp = fields.Integer(compute='_empleados_count',string='Nº Empleados',store=True)
     
     @api.one
-    @api.constrains('empleados_ids')
+    @api.depends('empleados_ids')
     def _empleados_count(self):
 
         x = self.env['upoelectro.almacen']
@@ -25,3 +25,5 @@ class almacen(models.Model):
                 cont+=1
             
             almacen.nEmp= cont
+            
+    _sql_constraints = [('almacen_identificador_unique','UNIQUE (identificador)','El identificador debe ser único')]

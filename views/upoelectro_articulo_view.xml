@@ -15,7 +15,7 @@
 						<field name="caracteristicas" />
 						<field name="precio" />
 						<field name="stock" />
-						<field name="categoria_nombre"/>
+						<field name="categoria_nombre" />
 					</group>
 				</form>
 			</field>
@@ -30,12 +30,50 @@
 					<field name="identificador" />
 					<field name="descripcion" />
 					<field name="marca" />
-					<field name="imagen" widget="image" />
 					<field name="caracteristicas" />
 					<field name="precio" />
 					<field name="stock" />
-					<field name="categoria_nombre"/>
+					<field name="categoria_nombre" />
 				</tree>
+			</field>
+		</record>
+
+		<record model="ir.ui.view" id="custom_ficha_kanban_view">
+			<field name="name">upoelectro.articulo_kanban</field>
+			<field name="model">upoelectro.articulo</field>
+			<field name="type">kanban</field>
+			<field name="arch" type="xml">
+				<kanban>
+					<!--list of field to be loaded -->
+					<field name="name" />
+					<field name="imagen" widget="image" />
+					<field name="precio" />
+					<field name="stock" />
+					<templates>
+						<t t-name="kanban-box" t-as="rec">
+							<div class="oe_product_vignette">
+								<a type="open">
+									<field name="imagen" widget="image"/>
+								</a>
+								<div class="oe_product_desc">
+									<h4>
+										<a type="edit">
+											<field name="name"></field>
+										</a>
+									</h4>
+									<ul>
+										<li>
+											Precio: <field name="precio"></field>
+										</li>
+										<li>
+											Stock: <field name="stock"></field>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</t>
+					</templates>
+				</kanban>
 			</field>
 		</record>
 
@@ -51,7 +89,7 @@
 				</search>
 			</field>
 		</record>
-		
+
 		<record model="ir.ui.view" id="upoelectro_articulo_graph">
 			<field name="name">Stock por artículo</field>
 			<field name="model">upoelectro.articulo</field>
@@ -67,8 +105,9 @@
 			model="ir.actions.act_window">
 			<field name="name">Articulos</field>
 			<field name="res_model">upoelectro.articulo</field>
-			<field name="view_mode">tree,form,graph</field>			
-			<field name="search_view_id" ref="view_upoelectro_articulo_search" />
+			<field name="view_mode">tree,form,graph,kanban</field>
+			<field name="search_view_id"
+				ref="view_upoelectro_articulo_search" />
 		</record>
 		<menuitem id="upoelectro" name="UPOElectro"
 			action="act_upoelectro_articulo" />
