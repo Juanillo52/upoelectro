@@ -15,8 +15,8 @@
 						<field name="codigo_postal" />
 						<field name="ciudad" />
 						<field name="provincia" />
-						<field name="foto" widget="image" width="100px"/>
-						<field name="ventas_ids"/>
+						<field name="foto" widget="image" width="100px" />
+						<field name="ventas_ids" />
 					</group>
 				</form>
 			</field>
@@ -33,20 +33,36 @@
 					<field name="correo" />
 					<field name="direccion" />
 					<field name="ventas_ids"/>
+					<field name="nVentas" />	
 				</tree>
 			</field>
 		</record>
 
+		<record model="ir.ui.view" id="view_upoelectro_cliente_search">
+			<field name="name">upoelectro_cliente_search</field>
+			<field name="model">upoelectro.cliente</field>
+			<field name="type">search</field>
+			<field name="arch" type="xml">
+				<search string="Clientes">
+					<filter string="Clientes con muchas ventas"
+						domain="[('nVentas','>','5')]" />
+				</search>
+			</field>
+		</record>
 
-		<record id="act_upoelectro_cliente" model="ir.actions.act_window">
+		<record id="act_upoelectro_cliente"
+			model="ir.actions.act_window">
 			<field name="name">Clientes</field>
 			<field name="res_model">upoelectro.cliente</field>
 			<field name="view_mode">tree,form</field>
+			<field name="search_view_id" ref="view_upoelectro_cliente_search" />
 		</record>
-		<menuitem id="upoelectro" name="UPOElectro" action="act_upoelectro_cliente" />
-		<menuitem name="Clientes" id="upoelectro_cliente_submenu" parent="upoelectro"
-			sequence="200" />
+		<menuitem id="upoelectro" name="UPOElectro"
+			action="act_upoelectro_cliente" />
+		<menuitem name="Clientes" id="upoelectro_cliente_submenu"
+			parent="upoelectro" sequence="200" />
 		<menuitem name="Ver clientes" id="ver_clientes_submenu"
-			parent="upoelectro_cliente_submenu" sequence="210" action="act_upoelectro_cliente" />
+			parent="upoelectro_cliente_submenu" sequence="210"
+			action="act_upoelectro_cliente" />
 	</data>
 </odoo> 

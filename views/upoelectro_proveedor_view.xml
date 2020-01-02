@@ -32,7 +32,7 @@
 					<field name="telefono" />
 					<field name="correo" />
 					<field name="direccion" />
-					<field name="compras_ids"/>
+					<field name="nCompras"/>
 				</tree>
 			</field>
 		</record>
@@ -42,7 +42,10 @@
 			<field name="model">upoelectro.proveedor</field>
 			<field name="type">search</field>
 			<field name="arch" type="xml">
-				<search string="Classes">
+				<search string="Proveedores">
+				<filter string="Proveedores con muchas compras"
+						domain="[('nCompras','>','5')]" />
+					<separator orientation="vertical" />
 					<group expand="0" string="Agrupar por…">
 						<filter name="group_by_provincia" string="Provincia"
 							context="{'group_by':'provincia'}" />

@@ -11,7 +11,7 @@
 						<field name="descripcion" />
 						<field name="imagen" widget="image" width="300px" />
 						<field name="almacen_id"/>
-						<field name="articulo_id"/>
+						<field name="articulos_ids"/>
 					</group>
 				</form>
 			</field>
@@ -25,16 +25,27 @@
 					<field name="name" />
 					<field name="descripcion" />
 					<field name="almacen_id"/>
+					<field name="nArticulos"/>
 				</tree>
 			</field>
 		</record>
-
+		
+		<record model="ir.ui.view" id="upoelectro_categoria_graph">
+			<field name="name">Artículos por Categoría</field>
+			<field name="model">upoelectro.categoria</field>
+			<field name="arch" type="xml">
+				<graph string="Categoría" type="bar">
+					<field name="name" type="row" />
+					<field name="nArticulos" type="measure" />
+				</graph>
+			</field>
+		</record>
 
 		<record id="act_upoelectro_categoria"
 			model="ir.actions.act_window">
 			<field name="name">Categorías</field>
 			<field name="res_model">upoelectro.categoria</field>
-			<field name="view_mode">tree,form</field>
+			<field name="view_mode">tree,form,graph</field>
 		</record>
 		<menuitem id="upoelectro" name="UPOElectro"
 			action="act_upoelectro_categoria" />

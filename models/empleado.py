@@ -16,3 +16,18 @@ class empleado(models.Model):
     ventas_ids = fields.One2many('upoelectro.venta','empleado_id', 'Ventas')
     compras_ids = fields.One2many('upoelectro.compra','empleado_id', 'Compras')
     almacenes_ids = fields.Many2many('upoelectro.almacen', string='Almacenes')
+    nVentas = fields.Integer(compute='_ventas_count',string='Nº Ventas',store=True)
+    
+    @api.depends('ventas_ids')
+    def _ventas_count(self):
+
+        x = self.env['upoelectro.empleado']
+        
+        for empleado in self:
+            cont = 0
+        
+            for rec in empleado.ventas_ids:
+            
+                cont+=1
+            
+            empleado.nVentas= cont

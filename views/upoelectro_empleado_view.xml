@@ -15,7 +15,7 @@
 						<field name="codigo_postal" />
 						<field name="ciudad" />
 						<field name="provincia" />
-						<field name="sueldo"/>
+						<field name="sueldo" />
 						<field name="foto" widget="image" width="100px" />
 						<field name="ventas_ids" />
 						<field name="compras_ids" />
@@ -35,7 +35,7 @@
 					<field name="telefono" />
 					<field name="correo" />
 					<field name="direccion" />
-					<field name="sueldo"/>
+					<field name="sueldo" />
 					<field name="ventas_ids" />
 					<field name="compras_ids" />
 					<field name="almacenes_ids" />
@@ -44,7 +44,7 @@
 		</record>
 
 		<record model="ir.ui.view" id="upoelectro_empleado_graph">
-			<field name="name">Ventas por empleado</field>
+			<field name="name">Sueldo por empleado</field>
 			<field name="model">upoelectro.empleado</field>
 			<field name="arch" type="xml">
 				<graph string="Sueldo" type="bar">
@@ -53,7 +53,18 @@
 				</graph>
 			</field>
 		</record>
-		
+
+		<record model="ir.ui.view" id="upoelectro_ventas_graph">
+			<field name="name">Ventas por empleado</field>
+			<field name="model">upoelectro.empleado</field>
+			<field name="arch" type="xml">
+				<graph string="Ventas" type="bar">
+					<field name="name" type="row" />
+					<field name="nVentas" type="measure" />
+				</graph>
+			</field>
+		</record>
+
 		<record id="act_upoelectro_empleado"
 			model="ir.actions.act_window">
 			<field name="name">Empleados</field>
