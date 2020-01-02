@@ -9,7 +9,7 @@
 					<group string="Almacenes">
 						<field name="identificador" />
 						<field name="localizacion" />
-						<field name="foto" widget="image" width="300px" />
+						<field name="foto" widget="image" width="200px" />
 						<field name="empleados_ids" />
 						<field name="categorias_ids" />
 					</group>
@@ -26,6 +26,7 @@
 					<field name="localizacion" />
 					<field name="empleados_ids" />
 					<field name="categorias_ids" />
+					<field name="num_empleados" />
 				</tree>
 			</field>
 		</record>
@@ -48,6 +49,7 @@
 			<field name="view_mode">tree,form</field>
 			<field name="search_view_id" ref="upoelectro_categoria_view_search"/>
 		</record>
+		
 		<menuitem id="upoelectro" name="UPOElectro"
 			action="act_upoelectro_almacen" />
 		<menuitem name="Almacenes" id="upoelectro_almacen_submenu"

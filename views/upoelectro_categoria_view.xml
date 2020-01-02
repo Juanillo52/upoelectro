@@ -9,7 +9,7 @@
 					<group string="Categorías">
 						<field name="name" />
 						<field name="descripcion" />
-						<field name="imagen" widget="image" width="300px" />
+						<field name="imagen" widget="image" width="100px" />
 						<field name="almacen_id"/>
 						<field name="articulo_id"/>
 					</group>

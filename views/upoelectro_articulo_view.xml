@@ -11,7 +11,7 @@
 						<field name="identificador" />
 						<field name="descripcion" />
 						<field name="marca" />
-						<field name="imagen" widget="image" />
+						<field name="imagen" widget="image" width="100px"/>
 						<field name="caracteristicas" />
 						<field name="precio" />
 						<field name="stock" />
@@ -30,7 +30,6 @@
 					<field name="identificador" />
 					<field name="descripcion" />
 					<field name="marca" />
-					<field name="imagen" widget="image" />
 					<field name="caracteristicas" />
 					<field name="precio" />
 					<field name="stock" />

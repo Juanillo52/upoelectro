@@ -44,4 +44,9 @@ class venta(models.Model):
         for lineaventa in self.lineaventa_ids:
             self.importe = self.importe + lineaventa.precio
     
+    @api.one
+    @api.constrains('importe')
+    def _check_importe(self):
+        if self.importe < 10:
+            raise models.ValidationError('El importe debe ser mayor a 10 euros')
     

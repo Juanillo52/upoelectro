@@ -57,33 +57,34 @@
 			<field name="ciudad">Utrera</field>
 			<field name="provincia">Sevilla</field>
 			<field name="foto" type="base64" file="upoelectro/img/cliente02.jpg" />
-
 		</record>
 		<record id="venta01" model="upoelectro.venta">
 			<field name="fecha">16/12/2019</field>
-			<field name="importe">154.5</field>
+			<field name="importe">50.80</field>
 			<field name="direccion">c/Puerto de la Mora, 135</field>
 			<field name="codigo_postal">41006</field>
 			<field name="ciudad">Sevilla</field>
 			<field name="provincia">Sevilla</field>
+			<field name="state">enviado</field>
 			<field name="empleado_id" ref="empleado01" />
 			<field name="cliente_id" ref="cliente01" />
 		</record>
 		<record id="venta02" model="upoelectro.venta">
 			<field name="fecha">15/12/2019</field>
-			<field name="importe">10.4</field>
+			<field name="importe">352</field>
 			<field name="direccion">C/Asturias, 15</field>
 			<field name="codigo_postal">41010</field>
 			<field name="ciudad">Sevilla</field>
 			<field name="provincia">Sevilla</field>
+			<field name="state">enviado</field>
 			<field name="empleado_id" ref="empleado02" />
 			<field name="cliente_id" ref="cliente02" />
 		</record>
 		<record id="proveedor01" model="upoelectro.proveedor">
 			<field name="identificador">1</field>
-			<field name="name">Dolores</field>
+			<field name="name">Logitech</field>
 			<field name="telefono">674789123</field>
-			<field name="correo">dolores@gmail.com</field>
+			<field name="correo">logitech@gmail.com</field>
 			<field name="direccion">C/Nervion, 124</field>
 			<field name="codigo_postal">41005</field>
 			<field name="ciudad">Sevilla</field>
@@ -93,9 +94,9 @@
 		</record>
 		<record id="proveedor02" model="upoelectro.proveedor">
 			<field name="identificador">2</field>
-			<field name="name">Juan Antonio</field>
+			<field name="name">Acer</field>
 			<field name="telefono">644789123</field>
-			<field name="correo">juanAntonio@gmail.com</field>
+			<field name="correo">acerventa@gmail.com</field>
 			<field name="direccion">C/Hytasa, 254</field>
 			<field name="codigo_postal">41006</field>
 			<field name="ciudad">Sevilla</field>
@@ -105,29 +106,97 @@
 		</record>
 		<record id="compra01" model="upoelectro.compra">
 			<field name="fecha">13/12/2019</field>
-			<field name="importe">254.5</field>
+			<field name="importe">127</field>
 			<field name="direccion">C/Juan Talavera Heredia, 164</field>
 			<field name="codigo_postal">41006</field>
 			<field name="ciudad">Sevilla</field>
 			<field name="provincia">Sevilla</field>
+			<field name="state">recibida</field>
 			<field name="proveedor_id" ref="proveedor02" />
 			<field name="empleado_id" ref="empleado02" />
 		</record>
 		<record id="compra02" model="upoelectro.compra">
 			<field name="fecha">10/12/2019</field>
-			<field name="importe">100.4</field>
+			<field name="importe">704</field>
 			<field name="direccion">C/Holanda, 154</field>
 			<field name="codigo_postal">41089</field>
 			<field name="ciudad">Montequinto</field>
 			<field name="provincia">Sevilla</field>
+			<field name="state">recibida</field>
 			<field name="proveedor_id" ref="proveedor01" />
 			<field name="empleado_id" ref="empleado01" />
 		</record>
 		<record id="almacen01" model="upoelectro.almacen">
 			<field name="identificador">1</field>
 			<field name="localizacion">C/Feria, 10, Sevilla</field>
-			<field name="foto" type="base64" file="upoelectro/img/almacen.png" />
-			<field name="empleados_ids" eval="[(6, 0, [empleado01, empleado02, ])]" ></field>
+			<field name="foto" type="base64" file="upoelectro/img/almacen.jpg" />
+			<field name="empleados_ids" eval="[(6, 0, [empleado01, ])]" ></field>
+		</record>
+		<record id="almacen02" model="upoelectro.almacen">
+			<field name="identificador">2</field>
+			<field name="localizacion">C/Betis, 100, Sevilla</field>
+			<field name="foto" type="base64" file="upoelectro/img/almacen02.jpg" />
+			<field name="empleados_ids" eval="[(6, 0, [empleado02, ])]" ></field>
+		</record>
+		<record id="categoria01" model="upoelectro.categoria">
+			<field name="name">Ratones gaming</field>
+			<field name="descripcion">Ratones con todas las caracteristicas requeridas por un gaming.</field>
+			<field name="imagen" type="base64" file="upoelectro/img/ratones.jpg" />
+			<field name="caracteristicas">Inalambrico, luces led</field>
+			<field name="almacen_id" ref="almacen01" />
+		</record>
+		<record id="articulo01" model="upoelectro.articulo">
+			<field name="name">Raton gaming</field>
+			<field name="identificador">1</field>
+			<field name="descripcion">Raton con todas las caracteristicas requeridas por un gaming.</field>
+			<field name="marca">Logitech</field>
+			<field name="stock">3</field>
+			<field name="imagen" type="base64" file="upoelectro/img/raton01.png" />
+			<field name="caracteristicas">Inalambrico, luces led</field>
+			<field name="precio">25.40</field>
+			<field name="categoria_nombre" ref="categoria01" />
+		</record>
+		<record id="lineacompra01" model="upoelectro.lineacompra">
+			<field name="cantidad">5</field>
+			<field name="precio">127</field>
+			<field name="articulo_id" ref="articulo01" />
+			<field name="compra_id" ref="compra01" />
+		</record>
+		<record id="lineaventa01" model="upoelectro.lineaventa">
+			<field name="cantidad">2</field>
+			<field name="precio">50.80</field>
+			<field name="articulo_id" ref="articulo01" />
+			<field name="venta_id" ref="venta01" />
+		</record>
+		<record id="categoria02" model="upoelectro.categoria">
+			<field name="name">Teclados gaming</field>
+			<field name="descripcion">Teclados con todas las caracteristicas requeridas por un gaming.</field>
+			<field name="imagen" type="base64" file="upoelectro/img/teclados.jpg" />
+			<field name="caracteristicas">luces led, teclas mecanicas, inalambricos</field>
+			<field name="almacen_id" ref="almacen02" />
+		</record>
+		<record id="articulo02" model="upoelectro.articulo">
+			<field name="name">Teclado gaming</field>
+			<field name="identificador">2</field>
+			<field name="descripcion">Teclado con todas las caracteristicas requeridas por un gaming.</field>
+			<field name="marca">Acer</field>
+			<field name="stock">5</field>
+			<field name="imagen" type="base64" file="upoelectro/img/teclado01.png" />
+			<field name="caracteristicas">luces led, teclas mecanicas</field>
+			<field name="precio">70.40</field>
+			<field name="categoria_nombre" ref="categoria02" />
+		</record>
+		<record id="lineacompra02" model="upoelectro.lineacompra">
+			<field name="cantidad">10</field>
+			<field name="precio">704</field>
+			<field name="articulo_id" ref="articulo02" />
+			<field name="compra_id" ref="compra02" />
+		</record>
+		<record id="lineaventa02" model="upoelectro.lineaventa">
+			<field name="cantidad">5</field>
+			<field name="precio">352</field>
+			<field name="articulo_id" ref="articulo02" />
+			<field name="venta_id" ref="venta02" />
 		</record>
 	</data>
 </odoo>
