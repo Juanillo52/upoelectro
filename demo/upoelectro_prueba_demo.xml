@@ -140,10 +140,9 @@
 		</record>
 		<record id="categoria01" model="upoelectro.categoria">
 			<field name="name">Ratones gaming</field>
-			<field name="descripcion">Ratones con todas las caracteristicas requeridas por un gaming.</field>
+			<field name="descripcion">Ratones con todas las caracteristicas requeridas por un gaming</field>
 			<field name="imagen" type="base64" file="upoelectro/img/ratones.jpg" />
-			<field name="caracteristicas">Inalambrico, luces led</field>
-			<field name="almacen_id" ref="almacen01" />
+			<field name="almacen_id" eval="[(6, 0, [almacen01, ])]" ></field>
 		</record>
 		<record id="articulo01" model="upoelectro.articulo">
 			<field name="name">Raton gaming</field>
@@ -172,8 +171,7 @@
 			<field name="name">Teclados gaming</field>
 			<field name="descripcion">Teclados con todas las caracteristicas requeridas por un gaming.</field>
 			<field name="imagen" type="base64" file="upoelectro/img/teclados.jpg" />
-			<field name="caracteristicas">luces led, teclas mecanicas, inalambricos</field>
-			<field name="almacen_id" ref="almacen02" />
+			<field name="almacen_id" eval="[(6, 0, [almacen02, ])]" ></field>
 		</record>
 		<record id="articulo02" model="upoelectro.articulo">
 			<field name="name">Teclado gaming</field>
